@@ -1,0 +1,12 @@
+# Android 启动手机配置
+
+- platformName: "Android"
+  appPackage: cn.btclass.sierra
+  appActivity: .ui.activity.MainActivity
+  platformVersion: "9.1"
+  deviceName: "HUAWEIP10"
+  udid: "SJE5T17619002517"
+  chromedriverExecutable : "/usr/local/bin/chromedriver_65_67"
+  host: 127.0.0.1
+  port: 4723
+  systemPort: 8201

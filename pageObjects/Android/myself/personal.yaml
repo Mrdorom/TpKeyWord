@@ -1,0 +1,68 @@
+updateNameButton: #修改用户名按钮
+  type: id
+  element: cn.btclass.sierra:id/personinfo_jiantou2
+
+updateNameInputButton: # 用户名输入框
+  type: id
+  element: cn.btclass.sierra:id/modifschool_et
+
+NameText: # 获取用户名文本
+  type: id
+  element: cn.btclass.sierra:id/personconfig_name
+
+updatePasswdButton:
+  type: id
+  element: cn.btclass.sierra:id/config_update_password
+
+oldPasswordFild:
+  type: id
+  element: cn.btclass.sierra:id/change_psw_et1
+
+newPasswordFild:
+  type: id
+  element: cn.btclass.sierra:id/change_psw_et2
+
+affirePasswordFild:
+  type: id
+  element: cn.btclass.sierra:id/change_psw_et3
+
+savePassword:
+  type: id
+  element: cn.btclass.sierra:id/change_psw_btn
+
+updateSummaryButton:
+  type: id
+  element: cn.btclass.sierra:id/personconfig_intrtv
+
+newSummaryFild:
+  type: id
+  element: cn.btclass.sierra:id/modifIntr_et
+
+newSummaryText:
+  type: id
+  element: cn.btclass.sierra:id/personconfig_intr
+
+schoolButton:
+  type: id
+  element: cn.btclass.sierra:id/personinfo_jiantou5
+
+schoolFile:
+  type: id
+  element: cn.btclass.sierra:id/modifschool_et
+
+shoolNameText:
+  type: id
+  element: cn.btclass.sierra:id/personconfig_school
+
+workButton:
+  type: id
+  element: cn.btclass.sierra:id/personconfig_companytv
+
+workFild:
+  type: id
+  element: cn.btclass.sierra:id/modifschool_et
+
+workNameText:
+  type: id
+  element: cn.btclass.sierra:id/personconfig_company
+

@@ -1,0 +1,57 @@
+personalCenter:
+  type: id
+  element: cn.btclass.sierra:id/iv_arrow_right  # 个人资料
+
+userName: # 用户名
+  type: id
+  element: cn.btclass.sierra:id/tv_user_name
+studentId:  # 学号
+  type: id
+  element: cn.btclass.sierra:id/tv_user_num
+copyStudentId:  # 复制学号
+  type: id
+  element: cn.btclass.sierra:id/tv_copy_num
+
+orderButton:  # 订单按钮
+  type: id
+  elemet: cn.btclass.sierra:id/rl_order
+
+couponButton: # 优惠券
+  type: id
+  element: cn.btclass.sierra:id/rl_cunpone
+
+send_book: # 材料寄送
+  type: id
+  element: cn.btclass.sierra:id/rl_send_book
+
+recommend:  # 推荐有奖
+  type: id
+  element: cn.btclass.sierra:id/rl_recommend
+
+beansButton: # B豆
+  type: id
+  element: cn.btclass.sierra:id/rl_balance
+
+cacheButton: # 缓存
+  type: xpath
+  element: //*[@text='缓存']
+
+helpButton: # 帮助中心
+  type: id
+  element: cn.btclass.sierra:id/rl_help_center
+
+ManualCustomerService:  # 人工客服
+  type: id
+  element: cn.btclass.sierra:id/rl_customer_service
+
+learnountC: # 学习记录
+  type: id
+  element: cn.btclass.sierra:id/iv_course_record
+
+settingButton:  # 设置按钮
+  type: id
+  element: cn.btclass.sierra:id/iv_setting
+
+
+# 公共返回按钮
+back_button: id,cn.btclass.sierra:id/back  # 返回按钮

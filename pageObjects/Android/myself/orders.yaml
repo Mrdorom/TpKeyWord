@@ -1,0 +1,31 @@
+unPidStatusButton:
+  type: xpath
+  element: //class[@text='待支付']
+
+pidStatusButton:
+  type: xpath
+  element: //class[@text='已支付']
+
+cancellButton:
+  type: xpath
+  element: //class[@text='待支付']
+
+createOrderButton:
+  type: id
+  element: cn.btclass.sierra:id/tv_create_order
+
+orderNum:
+  type: id
+  element: cn.btclass.sierra:id/tv_order_number
+
+orderTime:
+  type: id
+  element: cn.btclass.sierra:id/tv_order_time
+
+courseName:
+  type: id
+  element: cn.btclass.sierra:id/tv_order_title
+
+learn:
+  type: id
+  element: cn.btclass.sierra:id/tv_order_to_learn

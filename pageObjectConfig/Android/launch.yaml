@@ -1,0 +1,23 @@
+launch:   # 启动页面
+    mobileLoginButton:
+        type: id
+        element: cn.btclass.sierra:id/login_phonenum   # 账号密码登录入口
+    aaccount:
+        type: id
+        element: cn.btclass.sierra:id/login_phoneet   # 账号
+    passwd:
+        type: id
+        element: cn.btclass.sierra:id/login_passwordet  # 密码
+
+    submitButton: # 登录
+        type: id
+        element: cn.btclass.sierra:id/login_phoneloginbtn
+
+    forgetPasswd:  # 忘记密码
+        type: id
+        element: cn.btclass.sierra:id/login_phoneforgetbtn
+
+ckeckLogin:
+    explore:
+        type: id
+        element: cn.btclass.sierra:id/main_rb_mian # 探索

@@ -1,0 +1,23 @@
+cacheTitleType:
+  type: xpath
+  element: //*[@resource-id='cn.btclass.sierra:id/title_container']/android.widget.TextView
+
+coursePlayback:
+  type: xpath
+  element: //*[@text='课程回放']
+
+courseReloadRoadcast:
+  type: xpath
+  element: //*[@text='课程录播']
+
+microLesson:
+  type: xpath
+  element: //*[@text='微课']
+
+cacheCourseTitle: # 所有缓存课程
+  type: id
+  element: cn.btclass.sierra:id/item_replaycacahe_title
+
+cacheLessonTitle:
+  type: id
+  element: cn.btclass.sierra:id/item_replaycache_title
