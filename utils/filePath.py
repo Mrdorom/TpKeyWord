@@ -26,6 +26,11 @@ class FilePath(object):
     androidPagePath = os.path.join(basePath,"pageObjectConfig/Android")  # Android pages Element Base path
     androidLaunchPage = os.path.join(androidPagePath,"launch.yaml")
 
+    # iOS Page
+    iOSPagePath = os.path.join(basePath,"pageObjectConfig/iOS")
+    iOSLaunchPage = os.path.join(iOSPagePath,"launch.yaml")
+
+
 if __name__ == '__main__':
     f = FilePath()
     print(f.indexYaml)

@@ -1,0 +1,8 @@
+
+mobile_login_button: "type=='XCUIElementTypeButton' AND name=='账号登录'"
+account: "type=='XCUIElementTypeTextField' AND value=='请输入手机号/学号'"
+passwd: "type=='XCUIElementTypeSecureTextField' AND value=='请输入密码'"
+submit: "type=='XCUIElementTypeButton' AND name=='登录'"
+learn_title: type=='XCUIElementTypeStaticText' AND name=='请选择学习方向'
+skip_button: type=='XCUIElementTypeButton' AND name LIKE'跳过*'
+weichat: type=='XCUIElementTypeButton' and name=='微信登录'
