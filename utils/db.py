@@ -79,4 +79,5 @@ if __name__ == "__main__":
     sql = "SELECT id FROM bt_course_grouping where id =1000 "
     d = DbOption().select(sql)
     print(d)
+    print('ddddddddddddd')
 
