@@ -4,13 +4,13 @@
 # @Author : dorom
 # @File : loginPage.py
 # @Software: PyCharm
-import time
 
 from utils.filePath import FilePath # 配置文件路径
 from utils.logger import MyLogger # 日志
 from utils.readYaml import ReadYaml
 from driverOption.baseApi import BaseApi
 from errorExecption.eleNotFound import EleNotFound
+from pageObjects.Android.indexPage import MySelf
 
 
 class LoginPage(object):
@@ -23,9 +23,26 @@ class LoginPage(object):
         self.baseView = BaseApi(self.driver)
         self.launchPath = FilePath().androidLaunchPage
         self.readYaml =  ReadYaml()
-        self.readYaml.getStream(self.launchPath)   # 获取yaml数据流
-        self.launchEle = self.readYaml.stream.get("launch",False)  # 读取到本页数据
-        self.checkLoginEle = self.readYaml.stream.get("ckeckLogin",False)  # 登录成功校验元素
+        self.myself = MySelf(driver)
+
+
+        self.launchPage = self.readYaml.getStream(self.launchPath)
+        self.launchEle = self.launchPage.get("launch",False)
+        self.checkLoginEle = self.launchPage.get("ckeckLogin",False)  # 登录成功校验元素
+
+        self.mobileLoginButton = self.readYaml.getNode(self.launchEle, "mobileLoginButton")
+        self.aaccount = self.readYaml.getNode(self.launchEle, "aaccount")
+        self.passwd = self.readYaml.getNode(self.launchEle, "passwd")
+        self.submitButton = self.readYaml.getNode(self.launchEle, "submitButton")
+        self.forgetPasswd = self.readYaml.getNode(self.launchEle, "forgetPasswd")
+
+        self.androidUserInfoPage = self.readYaml.getStream(FilePath.androidUserInfoPage)
+        self.settingPage = self.readYaml.getStream(FilePath.androidSettingPage)
+        print("aaaaaaaaa"+str(self.settingPage))
+
+        self.settingButton = self.readYaml.getNode(self.androidUserInfoPage,"settingButton")
+        self.loginOutButton = self.readYaml.getNode(self.settingPage,"loginOutButton")
+        self.affirmLoginoutButton = self.readYaml.getNode(self.settingPage,"affirmLoginoutButton")
 
     def login(self,userName,password):
         """
@@ -34,11 +51,7 @@ class LoginPage(object):
         :param password: 密码
         :return:
         """
-        self.mobileLoginButton = self.readYaml.getNode(self.launchEle,"mobileLoginButton")
-        self.aaccount = self.readYaml.getNode(self.launchEle,"aaccount")
-        self.passwd = self.readYaml.getNode(self.launchEle,"passwd")
-        self.submitButton = self.readYaml.getNode(self.launchEle,"submitButton")
-        self.forgetPasswd = self.readYaml.getNode(self.launchEle,"forgetPasswd")
+        self.loginOut()  # 如果已登录会退出登录
 
         if self.baseView.checkElement(self.mobileLoginButton):
             self.baseView.click(self.mobileLoginButton)
@@ -51,21 +64,29 @@ class LoginPage(object):
         else:
             raise EleNotFound("输入账号按钮未找到")
 
-    def checkLogin(self):
+    def checkLogin(self,checkCountFlage=5):
         """
         多次容错检查 首页探索元素
         :return: bool
         """
         checkFlage = True
         checkCount = 0
-        while checkFlage and checkCount<5:
-            if self.baseView.checkElement(self.readYaml.getNode(self.checkLoginEle,"explore"),10):
+        while checkFlage and checkCount<checkCountFlage:
+            if self.baseView.checkElement(self.readYaml.getNode(self.checkLoginEle,"explore"),5):
                 checkFlage = False
                 res = True
-            if checkCount and checkCount==4:
+            if checkCount and checkCount==checkCountFlage-1:
                 res = False
             checkCount+=1
         return res
+
+    def loginOut(self):
+        if self.checkLogin(3):   #检查是否已经登录
+            self.myself.chooseNavigation()
+            if self.baseView.checkElement(self.settingButton):
+                self.baseView.click(self.settingButton)
+                self.baseView.click(self.loginOutButton)
+                self.baseView.click(self.affirmLoginoutButton)
 
 if __name__ == '__main__':
     l = LoginPage(1)
