@@ -243,27 +243,27 @@ function filter_table(elem) {
 }
 </script>
     <h1>HUAWEIP10.html</h1>
-    <p>Report generated on 30-May-2020 at 16:42:40 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
+    <p>Report generated on 02-Jun-2020 at 17:32:01 by <a href="https://pypi.python.org/pypi/pytest-html">pytest-html</a> v2.1.1</p>
     <h2>Environment</h2>
     <table id="environment">
       <tr>
         <td>JAVA_HOME</td>
-        <td>/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home</td></tr>
+        <td>D:\java</td></tr>
       <tr>
         <td>Packages</td>
         <td>{"pluggy": "0.13.1", "py": "1.8.1", "pytest": "5.4.2"}</td></tr>
       <tr>
         <td>Platform</td>
-        <td>Darwin-18.7.0-x86_64-i386-64bit</td></tr>
+        <td>Windows-10-10.0.18362-SP0</td></tr>
       <tr>
         <td>Plugins</td>
         <td>{"allure-pytest": "2.8.16", "html": "2.1.1", "metadata": "1.9.0", "randomly": "3.3.1"}</td></tr>
       <tr>
         <td>Python</td>
-        <td>3.7.6</td></tr></table>
+        <td>3.8.0</td></tr></table>
     <h2>Summary</h2>
-    <p>2 tests ran in 45.34 seconds. </p>
-    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">2 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
+    <p>1 tests ran in 18.23 seconds. </p>
+    <p class="filter" hidden="true">(Un)check the boxes to filter the results.</p><input checked="true" class="filter" data-test-result="passed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="passed">0 passed</span>, <input checked="true" class="filter" data-test-result="skipped" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="skipped">0 skipped</span>, <input checked="true" class="filter" data-test-result="failed" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="failed">1 failed</span>, <input checked="true" class="filter" data-test-result="error" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="error">0 errors</span>, <input checked="true" class="filter" data-test-result="xfailed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xfailed">0 expected failures</span>, <input checked="true" class="filter" data-test-result="xpassed" disabled="true" hidden="true" name="filter_checkbox" onChange="filter_table(this)" type="checkbox"/><span class="xpassed">0 unexpected passes</span>
     <h2>Results</h2>
     <table id="results-table">
       <thead id="results-table-head">
@@ -278,17 +278,8 @@ function filter_table(elem) {
         <tr>
           <td class="col-result">Failed</td>
           <td class="col-name">test/Android/testLogin.py::TestLogin::testLogin[13755321731-testtest]</td>
-          <td class="col-duration">10.32</td>
+          <td class="col-duration">5.47</td>
           <td class="col-links"></td></tr>
         <tr>
           <td class="extra" colspan="4">
-            <div class="log">self = &lt;test.Android.testLogin.TestLogin object at 0x104650e50&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/>driver = &lt;appium.webdriver.webdriver.WebDriver (session=&quot;eba517e6-8bb6-46a0-b9a0-48b91758758d&quot;)&gt;<br/>driverFunc = &lt;function driverFunc at 0x10459dc20&gt;<br/><br/>    def testLogin(self,userName,password,driver,driverFunc):<br/>        logger = MyLogger(self.__class__.__name__).getlogger()<br/>        login = LoginPage(driver)<br/>&gt;       login.login(userName,password)<br/><br/>../Android/testLogin.py:22: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;pageObjects.Android.loginPage.LoginPage object at 0x10466e210&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/><br/>    def login(self,userName,password):<br/>        &quot;&quot;&quot;<br/>        登录<br/>        :param userName: 账号<br/>        :param password: 密码<br/>        :return:<br/>        &quot;&quot;&quot;<br/>        self.mobileLoginButton = self.readYaml.getNode(self.launchEle,&quot;mobileLoginButton&quot;)<br/>        self.aaccount = self.readYaml.getNode(self.launchEle,&quot;aaccount&quot;)<br/>        self.passwd = self.readYaml.getNode(self.launchEle,&quot;passwd&quot;)<br/>        self.submitButton = self.readYaml.getNode(self.launchEle,&quot;submitButton&quot;)<br/>        self.forgetPasswd = self.readYaml.getNode(self.launchEle,&quot;forgetPasswd&quot;)<br/>    <br/>        if self.baseView.checkElement(self.mobileLoginButton):<br/>            self.baseView.click(self.mobileLoginButton)<br/>        else:<br/>&gt;           raise EleNotFound(&quot;账号登录按钮未找到&quot;)<br/><span class="error">E           errorExecption.eleNotFound.EleNotFound: 账号登录按钮未找到</span><br/><br/>../../pageObjects/Android/loginPage.py:46: EleNotFound<br/></div></td></tr></tbody>
-      <tbody class="failed results-table-row">
-        <tr>
-          <td class="col-result">Failed</td>
-          <td class="col-name">test/Android/testBase.py::TestLogin::testLogin[13755321731-testtest]</td>
-          <td class="col-duration">10.03</td>
-          <td class="col-links"></td></tr>
-        <tr>
-          <td class="extra" colspan="4">
-            <div class="log">self = &lt;test.Android.testBase.TestLogin object at 0x1046764d0&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/>driver = &lt;appium.webdriver.webdriver.WebDriver (session=&quot;2da4d6a3-6c08-4e03-9098-6b9e4b42d3fb&quot;)&gt;<br/>driverFunc = &lt;function driverFunc at 0x10459dc20&gt;<br/><br/>    def testLogin(self,userName,password,driver,driverFunc):<br/>        logger = MyLogger(self.__class__.__name__).getlogger()<br/>        login = LoginPage(driver)<br/>&gt;       login.login(userName,password)<br/><br/>../Android/testBase.py:22: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ <br/><br/>self = &lt;pageObjects.Android.loginPage.LoginPage object at 0x104717f90&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/><br/>    def login(self,userName,password):<br/>        &quot;&quot;&quot;<br/>        登录<br/>        :param userName: 账号<br/>        :param password: 密码<br/>        :return:<br/>        &quot;&quot;&quot;<br/>        self.mobileLoginButton = self.readYaml.getNode(self.launchEle,&quot;mobileLoginButton&quot;)<br/>        self.aaccount = self.readYaml.getNode(self.launchEle,&quot;aaccount&quot;)<br/>        self.passwd = self.readYaml.getNode(self.launchEle,&quot;passwd&quot;)<br/>        self.submitButton = self.readYaml.getNode(self.launchEle,&quot;submitButton&quot;)<br/>        self.forgetPasswd = self.readYaml.getNode(self.launchEle,&quot;forgetPasswd&quot;)<br/>    <br/>        if self.baseView.checkElement(self.mobileLoginButton):<br/>            self.baseView.click(self.mobileLoginButton)<br/>        else:<br/>&gt;           raise EleNotFound(&quot;账号登录按钮未找到&quot;)<br/><span class="error">E           errorExecption.eleNotFound.EleNotFound: 账号登录按钮未找到</span><br/><br/>../../pageObjects/Android/loginPage.py:46: EleNotFound<br/></div></td></tr></tbody></table></body></html>
+            <div class="log">self = &lt;test.Android.testLogin.TestLogin object at 0x000001BE023305B0&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/>driver = &lt;appium.webdriver.webdriver.WebDriver (session=&quot;e00fb1a5-776b-4ba6-a57d-ffa5a3b1a632&quot;)&gt;<br/>driverFunc = &lt;function driverFunc at 0x000001BE022E3160&gt;<br/><br/>    def testLogin(self,userName,password,driver,driverFunc):<br/>        logger = MyLogger(self.__class__.__name__).getlogger()<br/>        login = LoginPage(driver)<br/>&gt;       login.login(userName,password)<br/><br/>..\Android\testLogin.py:22: <br/>_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _<br/><br/>self = &lt;pageObjects.Android.loginPage.LoginPage object at 0x000001BE02385A60&gt;<br/>userName = 13755321731, password = &#x27;testtest&#x27;<br/><br/>    def login(self,userName,password):<br/>        &quot;&quot;&quot;<br/>        登录<br/>        :param userName: 账号<br/>        :param password: 密码<br/>        :return:<br/>        &quot;&quot;&quot;<br/>        self.mobileLoginButton = self.readYaml.getNode(self.launchEle,&quot;mobileLoginButton&quot;)<br/>        self.aaccount = self.readYaml.getNode(self.launchEle,&quot;aaccount&quot;)<br/>        self.passwd = self.readYaml.getNode(self.launchEle,&quot;passwd&quot;)<br/>        self.submitButton = self.readYaml.getNode(self.launchEle,&quot;submitButton&quot;)<br/>        self.forgetPasswd = self.readYaml.getNode(self.launchEle,&quot;forgetPasswd&quot;)<br/>    <br/>        if self.baseView.checkElement(self.mobileLoginButton):<br/>            self.baseView.click(self.mobileLoginButton)<br/>        else:<br/>&gt;           raise EleNotFound(&quot;账号登录按钮未找到&quot;)<br/><span class="error">E           errorExecption.eleNotFound.EleNotFound: 账号登录按钮未找到</span><br/><br/>..\..\pageObjects\Android\loginPage.py:46: EleNotFound<br/></div></td></tr></tbody></table></body></html>

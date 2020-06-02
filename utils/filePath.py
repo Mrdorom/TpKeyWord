@@ -21,7 +21,6 @@ class FilePath(object):
     androidDriverPath = os.path.join(basePath,"config/AndroidDriver.yaml")   #Android 设备配置文件
     androidTestDir = os.path.join(basePath, "test/Android") # android 测试用例检索目录
 
-    indexYaml = os.path.join(basePath,"pageObjects/index.yaml")
 
     # Android page
     androidPagePath = os.path.join(basePath,"pageObjectConfig/Android")  # Android pages Element Base path

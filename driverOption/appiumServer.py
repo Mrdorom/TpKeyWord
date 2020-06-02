@@ -33,11 +33,12 @@ class AppiumServer(object):
         bootStarpPort = str(self.port+1)
         cmd = " appium -a {0} -p {1} -bp {2} -U {3}".format(self.host, self.port, bootStarpPort,self.udid)
         appium_log = os.path.join(FilePath.appiumLog, str(self.port) + '.log')
-        if os.path.exists(appium_log):
-            os.remove(appium_log)
+
         if self.checkPort():
             self.logger.info("端口：{0}已被占用".format(self.port))
             self.stopPort()
+        if os.path.exists(appium_log):
+            os.remove(appium_log)
         subprocess.Popen(cmd, shell=True, stdout=open(appium_log, 'a'), stderr=subprocess.STDOUT)
         flage = False
         checkCount = 0

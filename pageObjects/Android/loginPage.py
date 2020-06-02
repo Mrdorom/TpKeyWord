@@ -6,8 +6,8 @@
 # @Software: PyCharm
 import time
 
-from utils.filePath import FilePath
-from utils.logger import MyLogger
+from utils.filePath import FilePath # 配置文件路径
+from utils.logger import MyLogger # 日志
 from utils.readYaml import ReadYaml
 from driverOption.baseApi import BaseApi
 from errorExecption.eleNotFound import EleNotFound
