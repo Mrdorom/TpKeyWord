@@ -1,5 +1,7 @@
 /venv/
 dbConfig.yaml
+.idea
+.pytest_cache
 
 
 # Byte-compiled / optimized / DLL files
