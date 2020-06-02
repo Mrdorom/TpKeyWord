@@ -1,0 +1,13 @@
+settingButton:
+  type: id
+  element: cn.btclass.sierra:id/iv_setting   # 这是按钮
+switchNight:
+  type: id
+  element: cn.btclass.sierra:id/sw_night  # 夜间模式开关
+loginOutButton:
+  type: id
+  element: cn.btclass.sierra:id/config_singout  # 退出登录按钮
+
+affirmLoginoutButton:
+  type: id
+  element: cn.btclass.sierra:id/btn_pos   # 确认退出按钮

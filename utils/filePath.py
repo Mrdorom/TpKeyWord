@@ -21,10 +21,16 @@ class FilePath(object):
     androidDriverPath = os.path.join(basePath,"config/AndroidDriver.yaml")   #Android 设备配置文件
     androidTestDir = os.path.join(basePath, "test/Android") # android 测试用例检索目录
 
+    # Android Params
+    androidLoginParams = os.path.join(basePath, "data/Android/loginParams.yaml")
 
     # Android page
     androidPagePath = os.path.join(basePath,"pageObjectConfig/Android")  # Android pages Element Base path
     androidLaunchPage = os.path.join(androidPagePath,"launch.yaml")
+    androidIndexPage = os.path.join(androidPagePath,"index.yaml")
+    androidUserInfoPage = os.path.join(androidPagePath,'myself/userInfoPage.yaml')
+    androidPersonalPage = os.path.join(androidPagePath,'myself/personal.yaml')
+    androidSettingPage = os.path.join(androidPagePath,"myself/settingPage.yaml")
 
 if __name__ == '__main__':
     f = FilePath()

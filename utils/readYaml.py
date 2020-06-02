@@ -14,7 +14,6 @@ from errorExecption.openFileError import OpenFileError
 class ReadYaml(object):
 
     def __init__(self):
-        self.stream = None
         self.file = None
 
     def getStream(self,path):
@@ -22,9 +21,11 @@ class ReadYaml(object):
         打开yaml文件，读取数据流
         :param path: yaml 文件地址
         """
+        self.file = path
         try:
             with open(path,encoding="utf-8") as file:
-                self.stream = yaml.full_load(file.read())
+                stream = yaml.full_load(file.read())
+                return stream
         except :
             raise OpenFileError("打开文件:{0}错误".format(path))
 
@@ -35,12 +36,15 @@ class ReadYaml(object):
         :return: 节点数据
         """
         if stream:
-            nodeValue = stream.get(nodeName)
-            type = nodeValue.get("type",False)
-            element = nodeValue.get("element",False)
-            if type is None or type is False:
-                return element
+            nodeValue = stream.get(nodeName,False)
+            if nodeValue:
+                type = nodeValue.get("type",False)
+                element = nodeValue.get("element",False)
+                if type is None or type is False:
+                    return element
+                else:
+                    return type,element
             else:
-                return type,element
+                raise NodeError("文件：{0}，没有数据节点:{1}".format(self.file,nodeName))
         else:
             raise  NodeError("文件：{0}的yaml，读取节点:{1} 错误".format(self.file,nodeName))

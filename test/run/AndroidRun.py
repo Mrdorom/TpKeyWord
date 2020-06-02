@@ -39,8 +39,8 @@ class AndroidRun(object):
         :return:
         """
         driverConfigPath = self.path.androidDriverPath
-        self.yaml.getStream(driverConfigPath)
-        driverData = self.yaml.stream
+        driverData = self.yaml.getStream(driverConfigPath)
+
         connetcDriver = getConnectUdid()
 
         desired_pool = []
