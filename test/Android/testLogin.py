@@ -6,18 +6,24 @@
 # @Software: PyCharm
 
 import pytest
-from driverOption.remoteDriver import RemoteDriver
 from pageObjects.Android.loginPage import LoginPage
-from utils.logger import MyLogger
+from utils.filePath import FilePath
+from utils.readYaml import ReadYaml
 
-data = [(13755321731,"testtest")]
+accountData = ReadYaml().getStream(FilePath.androidLoginParams)
+
+loginParams = []
+for account in accountData:
+    params = []
+    params.append(account["account"])
+    params.append(account["password"])
+    loginParams.append(params)
 
 
-@pytest.mark.parametrize("userName, password", data)
+@pytest.mark.parametrize("userName, password", loginParams)
 class TestLogin(object):
 
     def testLogin(self,userName,password,driver,driverFunc):
-        logger = MyLogger(self.__class__.__name__).getlogger()
         login = LoginPage(driver)
         login.login(userName,password)
         assert login.checkLogin()

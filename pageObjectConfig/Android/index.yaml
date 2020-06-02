@@ -1,0 +1,19 @@
+
+explore:
+  type: id
+  element: cn.btclass.sierra:id/main_rb_mian # 探索
+class:
+  type: id
+  element: cn.btclass.sierra:id/main_rb_message # 班级
+reconnetButton:
+  type: id
+  element: cn.btclass.sierra:id/conversationlist_reconnet   # 班组页面重新连接按钮
+questionBank:
+  type: id
+  element: cn.btclass.sierra:id/main_rb_qb # 题库
+myStudy:
+  type: id
+  element: cn.btclass.sierra:id/main_rb_whale  # 小才鲸
+mySelf:
+  type: id
+  element: cn.btclass.sierra:id/main_rb_mine # 我的
