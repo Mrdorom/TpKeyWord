@@ -20,9 +20,14 @@ class FilePath(object):
 
     androidDriverPath = os.path.join(basePath,"config/AndroidDriver.yaml")   #Android 设备配置文件
     androidTestDir = os.path.join(basePath, "test/Android") # android 测试用例检索目录
+    iOSTestDir = os.path.join(basePath, "test/iOS") # android 测试用例检索目录
 
     # Android Params
     androidLoginParams = os.path.join(basePath, "data/Android/loginParams.yaml")
+
+    # iOS Params
+    iOSLoginParams = os.path.join(basePath, "data/iOS/iOSLoginParams.yaml")
+
 
     # Android page
     androidPagePath = os.path.join(basePath,"pageObjectConfig/Android")  # Android pages Element Base path
@@ -35,8 +40,13 @@ class FilePath(object):
     # iOS Page
     iOSPagePath = os.path.join(basePath,"pageObjectConfig/iOS")
     iOSLaunchPage = os.path.join(iOSPagePath,"launch.yaml")
+    iOSIndexPage = os.path.join(iOSPagePath,"index.yaml")
+    iOSUserInfolPage = os.path.join(iOSPagePath,"myself/userInfoPage.yaml")
+    iOSettinglPage = os.path.join(iOSPagePath,"myself/settingPage.yaml")
+    iOSPersonalPage = os.path.join(iOSPagePath,"myself/personalPage.yaml")
 
 
 if __name__ == '__main__':
     f = FilePath()
-    print(f.indexYaml)
+
+    #

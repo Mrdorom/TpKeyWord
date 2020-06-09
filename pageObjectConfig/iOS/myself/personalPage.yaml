@@ -1,0 +1,13 @@
+saveButton: "type='XCUIElementTypeButton' AND name='保存'"
+backButton: "type='XCUIElementTypeButton' AND name='个人资料'"  # 返回个人资料按钮
+
+updateNamePage:
+  updateNameButton: "type=='XCUIElementTypeStaticText' AND name=='昵称'"  # 进入修改昵称页面
+  updateNameInputButton: "type=='XCUIElementTypeTextField'"  # 输入昵称框
+
+
+updateSummaryPage:
+  # 简介
+  updateSummaryButton: id,cn.btclass.sierra:id/personconfig_intrtv # 进入个人简介
+  setSummary: id,cn.btclass.sierra:id/modifIntr_et  # 输入个人简介
+  ckectSummaryText: id,cn.btclass.sierra:id/personconfig_intr   # 个人简介校验
