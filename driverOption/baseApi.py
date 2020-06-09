@@ -141,18 +141,23 @@ class BaseApi(object):
         else:
             raise EleNotFound("iOS ios_predicate：{} 元素未找到".format(ele))
 
-    def iosCheckElement(self, ele, timeout=10):
+    def iosCheckElement(self, ele, timeout=5):
         """
         检查 iOS 单个元素是否存在
         :param ele:
         :param timeout:
         :return:
         """
-        try:
-            WebDriverWait(self.driver, timeout).until(lambda x: x.find_element_by_ios_predicate(ele))
-            return True
-        except:
-            return False
+        findFlage = True
+        while findFlage and timeout > 0:
+            try:
+                self.driver.find_element_by_ios_predicate(ele)
+                return True
+            except:
+                pass
+            timeout -= 0.5
+            if timeout == 0:
+                return False
 
     def iosCheckElements(self, ele, timeout=10):
         """
@@ -161,11 +166,16 @@ class BaseApi(object):
         :param timeout:
         :return:
         """
-        try:
-            WebDriverWait(self.driver, timeout).until(lambda x: x.find_element_by_ios_predicate(ele))
-            return True
-        except:
-            return False
+        findFlage = True
+        while findFlage and timeout>0:
+            try:
+                self.driver.find_element_by_ios_predicate(ele)
+                return True
+            except:
+                pass
+            timeout -=0.5
+            if timeout==0:
+                return False
 
     def Select(self, loc):
         """
@@ -199,10 +209,10 @@ class BaseApi(object):
         :param loc:
         :return:
         """
-        self.iosPredicate(loc)
+        self.iosPredicate(loc).click()
 
 
-    def setValue(self,loc, params,lenth=0):
+    def setValue(self,loc, params,lenth=10):
         """
         ios 输入值
         :param ele:  元素
@@ -222,8 +232,13 @@ class BaseApi(object):
         :param lenth: 删除的次数
         """
         if lenth:
-            ele_button = 'type=="XCUIElementTypeKey" and label=="删除"'
-            ele = self.iosPredicate(ele_button)
+            try:
+                ele_button = 'type=="XCUIElementTypeKey" and label=="删除"'
+                ele = self.iosPredicate(ele_button,5)
+            except:
+                ele_button = 'type=="XCUIElementTypeKey" and label=="delete"'
+                ele = self.iosPredicate(ele_button, 5)
+
             for l in range(lenth):
                 ele.click()
 
@@ -343,7 +358,7 @@ class BaseApi(object):
         x = int(are[0] * x_num)
         y1 = int(are[1] * y1_num)
         y2 = int(are[1] * y2_num)
-        self.swipe(x, y2, x, y1, time)
+        self.swipe(x, y1, x, y2, time)
 
     def swipeRight(self, time=500):
         """
