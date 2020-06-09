@@ -37,14 +37,13 @@ class ReadYaml(object):
         """
         if stream:
             nodeValue = stream.get(nodeName,False)
-            if nodeValue:
-                type = nodeValue.get("type",False)
-                element = nodeValue.get("element",False)
-                if type is None or type is False:
-                    return element
-                else:
-                    return type,element
+            if isinstance(nodeValue,str):
+                return nodeValue
+            elif isinstance(nodeValue,dict):
+                type = nodeValue.get("type", False)
+                element = nodeValue.get("element", False)
+                return type, element
             else:
-                raise NodeError("文件：{0}，没有数据节点:{1}".format(self.file,nodeName))
+                raise NodeError("返回的数据是list，请用dict get方法")
         else:
             raise  NodeError("文件：{0}的yaml，读取节点:{1} 错误".format(self.file,nodeName))
