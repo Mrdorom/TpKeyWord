@@ -63,6 +63,18 @@ def driverFunc(driver,getUdid):
     driver.close_app()
 
 
+@pytest.fixture(scope='function')
+def iosTearDown(driver):
+    """
+    清理操作
+    :param driver:
+    :param getUdid:
+    :return:
+    """
+    yield iosTearDown
+    driver.close_app()
+
+
 
 
 
