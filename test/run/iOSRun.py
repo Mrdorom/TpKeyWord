@@ -27,7 +27,8 @@ class IosRun(object):
         :return:
         """
         driverName= data["deviceName"]
-        pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format(FilePath.iOSTestDir)])
+        # pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format(FilePath.iOSTestDir)])
+        pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format("/Users/dorom/workspace/btclass/TpKeyWord/test/iOS/testPersonal.py")])
 
     def main(self):
         """

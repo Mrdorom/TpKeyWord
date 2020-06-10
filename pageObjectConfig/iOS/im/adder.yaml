@@ -1,0 +1,12 @@
+add_friend_button: type=='XCUIElementTypeButton' and name=='rightAdd'  # 跳转新增朋友按钮
+add_friend_textField: type=='XCUIElementTypeTextField'  # 填写搜索输入框
+keybody_search_button: type=='XCUIElementTypeButton' and label=='搜索' # 键盘搜索按钮
+start_chat_button: type=='XCUIElementTypeButton' and label==' 发起聊天 '  # 搜索后发起聊天按钮
+cancel_button: type=='XCUIElementTypeButton' and label=='取消'  # 取消搜索
+back_adder_button: type=='XCUIElementTypeButton' and name=='通讯录'
+back_im_list_button: type=='XCUIElementTypeButton' and name=='返回'
+
+class_button: type=='XCUIElementTypeStaticText' AND name=='群组'
+class_search_button: type=='XCUIElementTypeTextField' AND value=='群名字'
+check_class_search_dest_button: type=='XCUIElementTypeStaticText' AND name=='{0}'   # 检查收搜结果
+key_body_search_button: "type=='XCUIElementTypeButton' AND name=='Search'"

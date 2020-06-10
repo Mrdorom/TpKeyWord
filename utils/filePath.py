@@ -44,6 +44,9 @@ class FilePath(object):
     iOSUserInfolPage = os.path.join(iOSPagePath,"myself/userInfoPage.yaml")
     iOSettinglPage = os.path.join(iOSPagePath,"myself/settingPage.yaml")
     iOSPersonalPage = os.path.join(iOSPagePath,"myself/personalPage.yaml")
+    iOSImIndexPage = os.path.join(iOSPagePath,"im/imindex.yaml")
+    iOSImAdderPage = os.path.join(iOSPagePath,"im/adder.yaml")
+    iOSImChatPage = os.path.join(iOSPagePath,"im/imChat.yaml")
 
 
 if __name__ == '__main__':
