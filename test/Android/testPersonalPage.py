@@ -1,6 +1,6 @@
 # coding:utf-8
 
-from pageObjects.Android.mySelf.personalPage import UpdateUserName,UpdateSchoolName,UpdateChangePassword,UpdateChangeIntroduction,UpdateChangeWorkName
+from pageObjects.Android.mySelf.personalPage import UpdateUserName,UpdateSchoolName,UpdateChangePassword,UpdateChangeIntroduction
 
 import  pytest
 from utils.filePath import FilePath
@@ -56,12 +56,12 @@ from utils.readYaml import ReadYaml
 #         assert updateChoole.checkUpdateRes(introduction)
 #         print('简介修改成功')
 
-# #修改工作单位
+##修改工作单位
 # class TestChangWorkName(object):
 #     def testChangeIntroduction(self,driver,driverFunc,workName = '银河'):
 #         tm = time.strftime("%H:%M:%S", time.localtime(time.time()))
 #         workName = workName + str(tm)
-#         updateChoole = UpdateChangeWorkName(driver)
+#         updateChoole = UpdateChangeIntroduction(driver)
 #         updateChoole.update(workName)
 #         assert updateChoole.checkUpdateRes(workName)
 #         print('工作单位修改成功')

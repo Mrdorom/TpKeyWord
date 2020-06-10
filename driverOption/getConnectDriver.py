@@ -29,6 +29,25 @@ def getConnectUdid():
     else:
         raise DriverConnectError("未检测到有设备接入")
 
+def getiOSUdid():
+    """
+    获取iOS udid
+    :return:
+    """
+    cmd = 'idevice_id -l'
+    udid_list = []
+    result = subprocess.Popen(cmd,shell=True,stderr =subprocess.PIPE,stdout=subprocess.PIPE ).stdout.readlines()
+    pattern = re.compile(r'b\'(.*?)\\n')
+    for daump in result:
+        p_str = pattern.findall(str(daump))
+        for p in p_str:
+            if p:
+                udid_list.append(p)
+    if udid_list:
+        return udid_list
+    else:
+        raise DriverConnectError("未检测到有iOS设备接入")
+
 
 if __name__ == '__main__':
-    getContenUdid()
+    getConnectUdid()

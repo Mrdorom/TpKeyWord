@@ -1,0 +1,4 @@
+nightSwitch: "type=='XCUIElementTypeSwitch' AND name=='暗色模式'"  # 暗色模式
+backButton: "type=='XCUIElementTypeButton' AND name=='返回'"
+loginOutButton: "type=='XCUIElementTypeStaticText' AND name=='退出登录'"
+affireButton: "type=='XCUIElementTypeButton' AND name=='确认'"  # 确认退出

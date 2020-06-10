@@ -1,0 +1,18 @@
+saveButton: "type='XCUIElementTypeButton' AND name='保存'"
+backButton: "type='XCUIElementTypeButton' AND name='个人资料'"  # 返回个人资料按钮
+
+updateNamePage:
+  updateNameButton: "type=='XCUIElementTypeStaticText' AND name=='昵称'"  # 进入修改昵称页面
+  updateNameInputButton: "type=='XCUIElementTypeTextField'"  # 输入昵称框
+
+
+updateSummaryPage:
+  # 简介
+  updateSummaryButton: "type=='XCUIElementTypeStaticText' AND name=='简介'"# 进入个人简介
+  setSummary: "type=='XCUIElementTypeTextView'"  # 输入个人简介
+  SummaryFlage: "type=='XCUIElementTypeStaticText' AND name LIKE'*/100'"   # 个人简介校验
+
+# 修改毕业院校
+updateSchoolButton: "type=='XCUIElementTypeStaticText' AND name=='毕业院校'"  # 进入修改毕业院校页面
+# 工作地址
+update_workButton: "type=='XCUIElementTypeStaticText' AND name=='工作单位'"  # 进入修改毕业院校页面

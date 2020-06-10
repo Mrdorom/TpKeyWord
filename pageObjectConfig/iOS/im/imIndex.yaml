@@ -1,0 +1,4 @@
+reconnect: type=='XCUIElementTypeStaticText' AND name=='连接中，或点击重新连接'
+search_button: type=='XCUIElementTypeTextField' AND value=='搜索'
+search_response: xpath,//XCUIElementTypeTable/XCUIElementTypeCell   # 搜索结果
+adder_button: type=='XCUIElementTypeButton' AND label=='address'  # 通讯录
