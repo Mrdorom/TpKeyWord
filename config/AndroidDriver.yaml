@@ -10,3 +10,17 @@
   host: 127.0.0.1
   port: 4723
   systemPort: 8201
+
+
+# Android 启动手机配置
+
+- platformName: "Android"
+  appPackage: cn.btclass.sierra
+  appActivity: .ui.activity.MainActivity
+  platformVersion: "9"
+  deviceName: "HUAWEIP10"
+  udid: "SJE5T17A24001392"
+  chromedriverExecutable: "/usr/local/bin/chromedriver_65_67"
+  host: 127.0.0.1
+  port: 4723
+  systemPort: 8201
