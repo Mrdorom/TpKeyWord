@@ -10,7 +10,14 @@ from driverOption.setInputMethod import setSougo
 from utils.logger import MyLogger
 from utils.db import DbOption
 import pytest
+from utils.readYaml import ReadYaml
+from utils.filePath import FilePath
+from pageObjects.Android.loginPage import LoginPage
 
+readyaml = ReadYaml()
+studentData = readyaml.getStream(FilePath.androidLoginParams)[0]
+studentId = studentData.get("account",False)
+password =  studentData.get("password",False)
 
 def pytest_addoption(parser):
     parser.addoption("--driverDict", action="store",
@@ -63,9 +70,11 @@ def driverFunc(driver,getUdid):
     driver.close_app()
 
 
-
-
-
+@pytest.fixture(scope='function')
+def androidLogin(driver):
+    yield androidLogin
+    login = LoginPage(driver)
+    login.login(studentId,password)
 
 
 
