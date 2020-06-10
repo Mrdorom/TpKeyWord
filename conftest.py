@@ -25,7 +25,7 @@ def driverDict(pytestconfig):
     driverDict = eval(driverDict)
     return driverDict
 
-@pytest.fixture()
+@pytest.fixture(scope="function")
 def db():
     db = DbOption()
     return db
