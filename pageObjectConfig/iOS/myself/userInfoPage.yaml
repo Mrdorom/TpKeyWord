@@ -1,3 +1,3 @@
-personalCenter: type=='XCUIElementTypeStaticText' AND label=='{0}'   # 传入用户名 点击可进入个人中心页面
-personalButtons: type=='XCUIElementTypeImage'  # 点第二张图片进入 个人中心
+personalButtons: type=='XCUIElementTypeStaticText' AND label=='{0}'   # 传入用户名 点击可进入个人中心页面
+#personalButtons: type=='XCUIElementTypeStaticText' and name='{}' # 点第二张图片进入 个人中心
 settingButton: "type=='XCUIElementTypeButton' AND label=='seting'"  # 个人中心设置按钮

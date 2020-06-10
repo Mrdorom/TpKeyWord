@@ -21,12 +21,9 @@ class PersonalHolder(object):
         self.db = DbOption()
         self.readYaml = ReadYaml()
         self.base = BaseApi(self.driver)
+        self.comePersonal = ClickPersonal(driver)
         self.indexHolder = IndexHolder(self.driver)
         self.userInfoPage = self.readYaml.getStream(FilePath.iOSUserInfolPage)
-
-        # self.personalCenter = self.readYaml.getNode(self.userInfoPage,"personalCenter")
-        self.personalButtons = self.readYaml.getNode(self.userInfoPage,"personalButtons")
-
 
         self.personalPage = self.readYaml.getStream(FilePath.iOSPersonalPage)
 
@@ -34,14 +31,17 @@ class PersonalHolder(object):
         self.backButton = self.readYaml.getNode(self.personalPage,"backButton")
 
 
-        self.updateNamePage = self.readYaml.getNode(self.personalPage,"updateNamePage")
-        self.updateNameButton = self.readYaml.getNode(self.updateNamePage,"updateNameButton")
-        self.updateNameInputButton = self.readYaml.getNode(self.updateNamePage,"updateNameInputButton")
+        self.updateNamePage = self.personalPage.get("updateNamePage")
+        self.updateNameButton = self.updateNamePage.get("updateNameButton")
+        self.updateNameInputButton = self.updateNamePage.get("updateNameInputButton")
 
-        self.updateSummaryPage = self.readYaml.getNode(self.personalPage,"updateSummaryPage")
-        self.updateSummaryButton = self.readYaml.getNode(self.updateSummaryPage,"updateSummaryButton")
-        self.setSummary = self.readYaml.getNode(self.updateSummaryPage,"setSummary")
-        self.ckectSummaryText = self.readYaml.getNode(self.updateSummaryPage,"ckectSummaryText")
+        self.updateSummaryPage = self.personalPage.get("updateSummaryPage")
+        self.updateSummaryButton = self.updateSummaryPage.get("updateSummaryButton")
+        self.setSummary = self.updateSummaryPage.get("setSummary")
+        self.SummaryFlage = self.updateSummaryPage.get("SummaryFlage")
+
+        self.updateSchoolButton = self.personalPage.get("updateSchoolButton")
+        self.update_workButton = self.personalPage.get("update_workButton")
 
 
 
@@ -49,21 +49,15 @@ class PersonalHolder(object):
     def update(self,*args,**kwargs):
         pass
 
-    def clickPersonal(self):
-        self.indexHolder.switchNavigation("我的")
-        if self.base.iosCheckElements(self.personalButtons):
-            buttons = self.base.iosPredicates(self.personalButtons)
-            buttons[1].click()  #进入个人资料设置页面
 
 
 class UpdateUserName(PersonalHolder):
-    def update(self,newUserName):
-        self.clickPersonal()
+    def update(self,newUserName,db,mobile):
+        self.comePersonal.clickPersonal(db,mobile)
         if self.base.iosCheckElement(self.updateNameButton):
             self.base.iosClick(self.updateNameButton)
-            self.base.setValue(newUserName,20)
+            self.base.setValue(self.updateNameInputButton,newUserName,15)
             self.base.iosClick(self.saveButton)
-            self.base.iosClick(self.backButton)
         else:
             raise EleNotFound("进入修改用户名页面失败")
 
@@ -82,20 +76,23 @@ class UpdateUserName(PersonalHolder):
 
 class UpdateSummary(PersonalHolder):
 
-    def update(self,summary):
+    def update(self,summary,db,mobile):
         """
         修改个人简介
         :param summary:
         :return:
         """
-        self.clickPersonal()
+        self.comePersonal.clickPersonal(db,mobile)
         if self.base.iosCheckElement(self.updateSummaryButton):
             self.base.iosClick(self.updateSummaryButton)
         else:
             raise EleNotFound("进入修改简介页面失败")
-        self.base.setValue(summary,20)
-        self.base.click(self.saveButton)
-        self.base.click(self.backButton)
+        self.base.iosClick(self.SummaryFlage)
+        ele = self.base.iosPredicate(self.setSummary)
+        ele.click()
+        self.base.iosClearText(20)
+        ele.set_value(summary)
+        self.base.iosClick(self.saveButton)
 
     def checkUpdateSummary(self,summary):
         """
@@ -103,9 +100,85 @@ class UpdateSummary(PersonalHolder):
         :param summary:
         :return:
         """
-        self.base.click(self.updateSummaryButton)
+        self.base.iosClick(self.updateSummaryButton,30)
         page = self.base.getPage()
         if summary in page:
             return True
         else:
             return False
+
+
+class UpdateSchool(PersonalHolder):
+
+    def update(self,schoolName, db,mobile):
+        self.comePersonal.clickPersonal(db, mobile)
+        self.base.iosClick(self.updateSchoolButton)
+        ele = self.base.iosPredicate(self.updateNameInputButton)
+        ele.click()
+        self.base.iosClearText(10)
+        ele.set_value(schoolName)
+        self.base.iosClick(self.saveButton)
+
+    def checkUpdateSchool(self,schoolName):
+        """
+        检查
+        :param schoolName:
+        :return:
+        """
+        self.base.iosClick(self.updateSchoolButton,30)
+        page = self.base.getPage()
+        if schoolName in page:
+            return True
+        else:
+            return False
+
+
+class UpdateWorkspace(PersonalHolder):
+
+    def update(self,workspaceName, db,mobile):
+        self.comePersonal.clickPersonal(db, mobile)
+        self.base.iosClick(self.update_workButton)
+        ele = self.base.iosPredicate(self.updateNameInputButton)
+        ele.click()
+        self.base.iosClearText(10)
+        ele.set_value(workspaceName)
+        self.base.iosClick(self.saveButton)
+
+    def checkUpdateWorkspace(self,workspaceName):
+        """
+        检查
+        :param workspaceName:
+        :return:
+        """
+        self.base.iosClick(self.update_workButton,30)
+        page = self.base.getPage()
+        if workspaceName in page:
+            return True
+        else:
+            return False
+
+
+class ClickPersonal(object):
+
+    def __init__(self,driver):
+        self.driver = driver
+        self.base = BaseApi(driver)
+        self.indexHolder = IndexHolder(driver)
+        self.readYaml = ReadYaml()
+        self.userInfoPage = self.readYaml.getStream(FilePath.iOSUserInfolPage)
+        self.personalButtons = self.readYaml.getNode(self.userInfoPage,"personalButtons")
+
+
+    def clickPersonal(self,db,mobile):
+        """
+        进入修改个人资料页面
+        :param db:
+        :param mobile:
+        :return:
+        """
+        self.indexHolder.switchNavigation("我的")
+        userName = db.select("select nickname from user where verifiedMobile= {0}".format(mobile))[0][0]
+        self.personalButtons = self.personalButtons.format(userName)
+        if self.base.iosCheckElements(self.personalButtons):
+            button = self.base.iosPredicate(self.personalButtons)
+            button.click()  #进入个人资料设置页面

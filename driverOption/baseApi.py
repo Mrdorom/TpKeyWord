@@ -203,13 +203,13 @@ class BaseApi(object):
         textData = self.findElement(loc,10).text
         return textData
 
-    def iosClick(self,loc):
+    def iosClick(self,loc,timeout=5):
         """
         ios 点击元素
         :param loc:
         :return:
         """
-        self.iosPredicate(loc).click()
+        self.iosPredicate(loc,timeout).click()
 
 
     def setValue(self,loc, params,lenth=10):

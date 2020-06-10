@@ -8,6 +8,11 @@ updateNamePage:
 
 updateSummaryPage:
   # 简介
-  updateSummaryButton: id,cn.btclass.sierra:id/personconfig_intrtv # 进入个人简介
-  setSummary: id,cn.btclass.sierra:id/modifIntr_et  # 输入个人简介
-  ckectSummaryText: id,cn.btclass.sierra:id/personconfig_intr   # 个人简介校验
+  updateSummaryButton: "type=='XCUIElementTypeStaticText' AND name=='简介'"# 进入个人简介
+  setSummary: "type=='XCUIElementTypeTextView'"  # 输入个人简介
+  SummaryFlage: "type=='XCUIElementTypeStaticText' AND name LIKE'*/100'"   # 个人简介校验
+
+# 修改毕业院校
+updateSchoolButton: "type=='XCUIElementTypeStaticText' AND name=='毕业院校'"  # 进入修改毕业院校页面
+# 工作地址
+update_workButton: "type=='XCUIElementTypeStaticText' AND name=='工作单位'"  # 进入修改毕业院校页面
