@@ -146,7 +146,7 @@ class UpdateChangeIntroduction(PersonalHolder):
         else:
             return False
 
-    class UpdateChangeWorkName(PersonalHolder):
+class UpdateChangeWorkName(PersonalHolder):
         def update(self, workName):
             self.mySelf.chooseNavigation()
             self.base.supperElement(self.personalCenter, '进入个人中心页面失败')
