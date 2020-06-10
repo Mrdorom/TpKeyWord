@@ -7,8 +7,8 @@
 
 from utils.filePath import FilePath # 配置文件路径
 from utils.logger import MyLogger # 日志
-from utils.readYaml import ReadYaml
-from driverOption.baseApi import BaseApi
+from utils.readYaml import ReadYaml # 获取元素
+from driverOption.baseApi import BaseApi # 元素操作
 from errorExecption.eleNotFound import EleNotFound
 from pageObjects.Android.indexPage import MySelf
 
@@ -19,7 +19,7 @@ class LoginPage(object):
     """
     def __init__(self,driver):
         self.driver = driver
-        self.logger = MyLogger(self.__class__.__name__).getlogger()
+        self.logger = MyLogger(self.__class__.__name__).getlogger() # 获取日志
         self.baseView = BaseApi(self.driver)
         self.launchPath = FilePath().androidLaunchPage
         self.readYaml =  ReadYaml()
@@ -38,7 +38,6 @@ class LoginPage(object):
 
         self.androidUserInfoPage = self.readYaml.getStream(FilePath.androidUserInfoPage)
         self.settingPage = self.readYaml.getStream(FilePath.androidSettingPage)
-        print("aaaaaaaaa"+str(self.settingPage))
 
         self.settingButton = self.readYaml.getNode(self.androidUserInfoPage,"settingButton")
         self.loginOutButton = self.readYaml.getNode(self.settingPage,"loginOutButton")
@@ -61,6 +60,7 @@ class LoginPage(object):
             self.baseView.sendKeys(self.aaccount,userName)
             self.baseView.sendKeys(self.passwd,password)
             self.baseView.click(self.submitButton)
+            print('登录成功')
         else:
             raise EleNotFound("输入账号按钮未找到")
 
@@ -90,3 +90,4 @@ class LoginPage(object):
 
 if __name__ == '__main__':
     l = LoginPage(1)
+

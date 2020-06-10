@@ -6,63 +6,70 @@ updateNameInputButton: # 用户名输入框
   type: id
   element: cn.btclass.sierra:id/modifschool_et
 
+updateNameSaveButton: # 修改用户名保存
+  type: id
+  element: cn.btclass.sierra:id/tv_right_notice
+
 NameText: # 获取用户名文本
   type: id
   element: cn.btclass.sierra:id/personconfig_name
 
-updatePasswdButton:
+updatePasswdButton: # 修改密码按钮
   type: id
   element: cn.btclass.sierra:id/config_update_password
 
-oldPasswordFild:
+oldPasswordFild: #旧密码
   type: id
   element: cn.btclass.sierra:id/change_psw_et1
 
-newPasswordFild:
+newPasswordFild: #新密码
   type: id
   element: cn.btclass.sierra:id/change_psw_et2
 
-affirePasswordFild:
+affirePasswordFild: #再次确认密码
   type: id
   element: cn.btclass.sierra:id/change_psw_et3
 
-savePassword:
+savePassword: #保存密码
   type: id
   element: cn.btclass.sierra:id/change_psw_btn
 
-updateSummaryButton:
+updateSummaryButton: #修改简介
   type: id
   element: cn.btclass.sierra:id/personconfig_intrtv
 
-newSummaryFild:
+newSummaryFild: # 点击新简介输入框
   type: id
   element: cn.btclass.sierra:id/modifIntr_et
 
-newSummaryText:
+newSummaryText: # 校验简介文本内容
   type: id
   element: cn.btclass.sierra:id/personconfig_intr
 
-schoolButton:
+schoolButton: # 学校按钮
   type: id
   element: cn.btclass.sierra:id/personinfo_jiantou5
 
-schoolFile:
+schoolFile: # 学校的输入框
   type: id
   element: cn.btclass.sierra:id/modifschool_et
 
-shoolNameText:
+schoolNameText: # 校验学校文本
   type: id
   element: cn.btclass.sierra:id/personconfig_school
 
-workButton:
+workButton: #工作按钮
   type: id
   element: cn.btclass.sierra:id/personconfig_companytv
 
-workFild:
+workFild: # 工作输入框
   type: id
   element: cn.btclass.sierra:id/modifschool_et
 
-workNameText:
+workNameText: #校验工作文本
   type: id
   element: cn.btclass.sierra:id/personconfig_company
 
+backButton: #返回按钮
+  type: id
+  element: cn.btclass.sierra:id/rl_back_img
