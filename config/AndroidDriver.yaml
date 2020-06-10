@@ -10,3 +10,14 @@
   host: 127.0.0.1
   port: 4723
   systemPort: 8201
+
+- platformName: "iOS"
+  platformVersion: "11.2.5"
+  deviceName: "iphone SE"
+  udid: "08415c02e0a2f93b4137da33e996146362000b2c"
+  wdaLocalPort: 8101
+  host: 127.0.0.1
+  port: 4723
+  systemPort: 8201
+  bundleId: "cn.btclass.sierra"
+  xcodeOrgId: 3T49A8WRJ5

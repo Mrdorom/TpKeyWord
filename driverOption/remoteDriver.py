@@ -35,10 +35,10 @@ class RemoteDriver(object):
             self.Capabilities["resetKeyboard"] = True  # 输入法复位
             self.Capabilities["uiautomator2ServerLaunchTimeout"] = 72000  # Appium 新命令间隔时间
         elif platformName.upper() == "IOS":
-            self.Capabilities["automationName"] = capabilitiesData["automationName"]
+            self.Capabilities["automationName"] = "XCUITest"
             self.Capabilities["bundleId"] = capabilitiesData["bundleId"]
+            self.Capabilities["xcodeSigningId"] = "iPhone Developer"
             self.Capabilities["xcodeOrgId"] = capabilitiesData["xcodeOrgId"]
-            self.Capabilities["xcodeSigningId"] = capabilitiesData["xcodeSigningId"]
             self.Capabilities["wdaLocalPort"] = capabilitiesData["wdaLocalPort"]    # iOS  wda代理端口设置（用于控制多机测试）
             self.Capabilities["webkitResponseTimeout"] = 1000
             self.Capabilities["useNewWDA"] = True     #暂时还不清楚有什么用

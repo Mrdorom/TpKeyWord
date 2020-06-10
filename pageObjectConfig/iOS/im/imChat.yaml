@@ -1,0 +1,20 @@
+send_text_button: type=='XCUIElementTypeTextView'   # 发送文字输入框
+emoticon_button: type=='XCUIElementTypeButton' AND name=='chatting biaoqing btn normal1'  # 开启表情按钮
+chioce_emoticon_buttton: type=='XCUIElementTypeButton'  # 选择表情
+send_msg_button: type=='XCUIElementTypeButton' AND name=='发送'
+end_chat_button: xpath,//XCUIElementTypeNavigationBar/XCUIElementTypeButton # 退出聊天页面
+check_send_text_button: type=='XCUIElementTypeTextView' # 发送消息内容检查点
+more_button: type=='XCUIElementTypeButton' AND name=='chat setmode add btn normal1'  # 开启发图，拍照，文件
+pic_button: type=='XCUIElementTypeButton' AND name=='actionbar pic icon1'  # 图片
+choice_pic_button: type=='XCUIElementTypeButton' AND name=='photopicker state normal'  # 选择图片按钮
+send_pic: type=='XCUIElementTypeButton' AND name=='发送'
+check_send_pic: type=='XCUIElementTypeImage'  # 发送图片检查点
+camera_button: type=='XCUIElementTypeButton' AND name=='actionbar camera icon1'  # 相机
+file_button: type=='XCUIElementTypeButton' AND name=='actionbar file icon1' # 文件
+
+# 进入班级设置页按钮
+morePoint: type=='XCUIElementTypeButton' AND name=='morePoint'
+set_class_remark_button: type=='XCUIElementTypeStaticText' AND name=='我的群名片'
+set_class_remark_text: type=='XCUIElementTypeTextField'
+save_button: type=='XCUIElementTypeButton' AND name=='保存'
+check_remark: type=='XCUIElementTypeStaticText' AND name=='{}'

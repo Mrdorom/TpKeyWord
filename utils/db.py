@@ -18,8 +18,7 @@ class DbOption(object):
     def __init__(self):
         self.mylogger = MyLogger(self.__class__.__name__).getlogger()
         self.read = ReadYaml()
-        self.read.getStream(FilePath.dbConfigPath)
-        btclassDB = self.read.stream["DB_data"]
+        btclassDB =  self.read.getStream(FilePath.dbConfigPath)["DB_data"]
         self.host = btclassDB["host"]
         self.username = btclassDB["username"]
         self.password = btclassDB["password"]
