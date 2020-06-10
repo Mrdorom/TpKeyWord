@@ -4,7 +4,7 @@
 # @Author : dorom
 # @File : appiumServer.py
 # @Software: PyCharm
-import os
+import os,sys
 import subprocess
 import time
 
@@ -71,11 +71,18 @@ class AppiumServer(object):
         """
         if self.webDriver:   # 关闭webDriver
             CloseWebdriver().closeWebdriver(self.webDriver)
-
-        cmd = "ps -ef | grep {0}".format(self.port) + "| awk '{print $2}'"
+        platform = sys.platform
+        if "win" in platform :
+            cmd = 'netstat -ano|findstr "{0}"' .format(self.port)
+        else:
+            cmd = "ps -ef | grep {0}".format(self.port) + "| awk '{print $2}'"
         pid_list = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.readlines()
         pattrn = re.compile(r"(\d+)")
         for pid in pid_list:
-            cmd = 'kill -9 {0}'.format(pattrn.findall(str(pid))[0])
+            if "win" in platform :
+                cmd = "taskkill /pid   {0} /f".format(pattrn.findall(str(pid))[-1])
+                print(cmd)
+            else:
+                cmd = 'kill -9 {0}'.format(pattrn.findall(str(pid))[0])
             os.system(cmd)
         self.logger.info("端口:{0}退出成功".format(self.port))

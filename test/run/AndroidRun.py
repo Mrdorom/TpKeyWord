@@ -27,7 +27,8 @@ class AndroidRun(object):
         :return:
         """
         driverName= data["deviceName"]
-        pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format(FilePath.androidTestDir)])
+        # pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format(FilePath.androidTestDir)])
+        pytest.main(["-s", "--driverDict={0}".format(data), "--html={0}/{1}.html".format(FilePath.reportPath,driverName),"{0}".format(r"C:\Users\qi\PycharmProjects\TpKeyWord\test\Android\testPersonalPage.py")])
 
     def main(self):
         """

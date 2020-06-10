@@ -27,6 +27,7 @@ class IndexPage(object):
         self.questionBank = self.readyaml.getNode(self.indexPage,"questionBank")
         self.myStudy = self.readyaml.getNode(self.indexPage,"myStudy")
         self.mySelf = self.readyaml.getNode(self.indexPage,"mySelf")
+        print(self.mySelf)
 
     def comeNATIVEAPP(self):
         """切换到原生"""
@@ -77,7 +78,7 @@ class QuestionBank(IndexPage):
 class MySelf(IndexPage):
 
     def chooseNavigation(self):
-        if self.base.checkElement(self.mySelf):
+        if self.base.checkElement(self.mySelf,180):
             self.base.click(self.mySelf)
         else:
             raise EleNotFound("我的按钮未找到")

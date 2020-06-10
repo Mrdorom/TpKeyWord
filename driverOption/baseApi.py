@@ -19,17 +19,31 @@ class BaseApi(object):
         self.driver = driver
         self.logger = MyLogger(self.__class__.__name__).getlogger()
 
-    def checkElement(self,loc,time=5):
+    def supperElement(self,loc,errorString,time=5):
+        if not self.checkElement(loc,time):
+            raise EleNotFound(errorString)
+
+    def checkElement(self,loc,timeout=5):
         """
         检查元素是否存在
         :param loc: loc type is tuple
         :return: check result
         """
-        try:
-            WebDriverWait(self.driver, time).until(lambda x: x.find_element(*loc))
-            return True
-        except:
-            return False
+
+        if not isinstance(timeout,int):
+            raise EleNotFound("超时时间必须是的整数")
+
+        flage = True
+        while flage and timeout>0:
+            try:
+                self.driver.find_element(*loc)
+                return True
+            except:
+                pass
+            time.sleep(0.5)
+            if flage and timeout==0:
+                return False
+            timeout -= 0.5
 
 
     def checkElements(self,loc,time=10):
