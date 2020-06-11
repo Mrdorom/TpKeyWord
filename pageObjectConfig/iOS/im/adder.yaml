@@ -6,7 +6,7 @@ cancel_button: type=='XCUIElementTypeButton' and label=='取消'  # 取消搜索
 back_adder_button: type=='XCUIElementTypeButton' and name=='通讯录'
 back_im_list_button: type=='XCUIElementTypeButton' and name=='返回'
 
-class_button: type=='XCUIElementTypeStaticText' AND name=='群组'
+classGroupbutton: type=='XCUIElementTypeStaticText' AND name=='群组'
 class_search_button: type=='XCUIElementTypeTextField' AND value=='群名字'
 check_class_search_dest_button: type=='XCUIElementTypeStaticText' AND name=='{0}'   # 检查收搜结果
 key_body_search_button: "type=='XCUIElementTypeButton' AND name=='Search'"
