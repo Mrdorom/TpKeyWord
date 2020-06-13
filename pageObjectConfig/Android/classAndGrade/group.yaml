@@ -1,0 +1,58 @@
+
+#班级总消息个数显示
+messagesNumber:
+  type: id
+  element: cn.btclass.sierra:id/mainactivity_messagepoint
+
+#通讯录
+addressList:
+  type: id
+  element: cn.btclass.sierra:id/addfriend
+
+#添加好友
+addFriend:
+  type: id
+  element: cn.btclass.sierra:id/rl_right_more
+
+#好友输入框
+addFriendScanf:
+  type: id
+  element: cn.btclass.sierra:id/search_et
+
+#添加好友按钮
+addFriendButton:
+  type: id
+  element: cn.btclass.sierra:id/item_serachfriendbtn
+
+#发送好友验证按钮
+sendFriendButton:
+  type: id
+  element: cn.btclass.sierra:id/applyfriend_send
+
+#新朋友
+newFriend:
+  type: id
+  element: cn.btclass.sierra:id/adress_newfriendlayout
+
+
+
+#班级搜索
+search:
+  type: xpath
+  elelment: //*[@text='搜索']
+
+#聊天消息名
+messageName:
+  type: id
+  element: cn.btclass.sierra:id/tv_user_name
+
+#聊天消息内容
+message:
+  type: id
+  element: cn.btclass.sierra:id/tv_last_message
+
+#返回上一层
+backtrack:
+  type: id
+  element: cn.btclass.sierra:id/rl_back_img
+

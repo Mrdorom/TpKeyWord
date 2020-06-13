@@ -36,6 +36,7 @@ class FilePath(object):
     androidUserInfoPage = os.path.join(androidPagePath,'myself/userInfoPage.yaml')
     androidPersonalPage = os.path.join(androidPagePath,'myself/personal.yaml')
     androidSettingPage = os.path.join(androidPagePath,"myself/settingPage.yaml")
+    androidGroup = os.path.join(androidPagePath,"classAndGrade/group.yaml")
 
     # iOS Page
     iOSPagePath = os.path.join(basePath,"pageObjectConfig/iOS")

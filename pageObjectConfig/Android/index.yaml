@@ -4,7 +4,7 @@ explore:
   element: cn.btclass.sierra:id/main_rb_mian # 探索
 class:
   type: id
-  element: cn.btclass.sierra:id/main_rb_message # 班级
+  element: cn.btclass.sierra:id/main_rb_message # 校园
 reconnetButton:
   type: id
   element: cn.btclass.sierra:id/conversationlist_reconnet   # 班组页面重新连接按钮
