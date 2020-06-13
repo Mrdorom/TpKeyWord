@@ -177,7 +177,7 @@ class ClickPersonal(object):
         :return:
         """
         self.indexHolder.switchNavigation("我的")
-        userName = db.select("select nickname from user where verifiedMobile= {0}".format(mobile))[0][0]
+        userName = db.select("select nickname from user where studentId= {0}".format(mobile))[0][0]
         self.personalButtons = self.personalButtons.format(userName)
         if self.base.iosCheckElements(self.personalButtons):
             button = self.base.iosPredicate(self.personalButtons)
