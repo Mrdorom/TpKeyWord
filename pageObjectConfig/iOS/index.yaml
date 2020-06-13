@@ -2,7 +2,7 @@
 
 closeAdButton: "type=='XCUIElementTypeButton' AND name=='广告关闭'"
 explorButton: type=='XCUIElementTypeButton' AND name=='探索'
-classButton: type=='XCUIElementTypeButton' AND name=='班级'
+classButton: type=='XCUIElementTypeButton' AND name=='校园'
 learnButton: type=='XCUIElementTypeButton' AND name='学习中心'
 questionBankButton: type=='XCUIElementTypeButton' AND name=='题库'
 myselfButton: type=='XCUIElementTypeButton' AND name=='我的'

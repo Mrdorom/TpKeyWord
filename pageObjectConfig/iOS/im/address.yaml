@@ -1,11 +1,14 @@
 add_friend_button: type=='XCUIElementTypeButton' and name=='rightAdd'  # 跳转新增朋友按钮
 add_friend_textField: type=='XCUIElementTypeTextField'  # 填写搜索输入框
 keybody_search_button: type=='XCUIElementTypeButton' and label=='搜索' # 键盘搜索按钮
+addFriends: type=='XCUIElementTypeStaticText' and name==' 添加好友 '
+sendViryMsg: type=='XCUIElementTypeStaticText' and name=='发送验证'   #发起加好友验证
 start_chat_button: type=='XCUIElementTypeButton' and label==' 发起聊天 '  # 搜索后发起聊天按钮
-cancel_button: type=='XCUIElementTypeButton' and label=='取消'  # 取消搜索
+cancelButton: type=='XCUIElementTypeStaticText' and label=='取消'  # 取消搜索
 back_adder_button: type=='XCUIElementTypeButton' and name=='通讯录'
 back_im_list_button: type=='XCUIElementTypeButton' and name=='返回'
-
+systemAddFriend: type=='XCUIElementTypeStaticText' and name=='您有一个新的好友申请'
+agreeButton: type=='XCUIElementTypeButton' and name=='添加'
 classGroupbutton: type=='XCUIElementTypeStaticText' AND name=='群组'
 class_search_button: type=='XCUIElementTypeTextField' AND value=='群名字'
 check_class_search_dest_button: type=='XCUIElementTypeStaticText' AND name=='{0}'   # 检查收搜结果
