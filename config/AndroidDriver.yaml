@@ -21,3 +21,15 @@
   systemPort: 8201
   bundleId: "cn.btclass.sierra"
   xcodeOrgId: 3T49A8WRJ5
+
+
+- platformName: "iOS"
+  platformVersion: "13.4"
+  deviceName: "iphone 8"
+  udid: "336a1f66a93c424f76ad055e524a70efc85a2e7b"
+  wdaLocalPort: 8101
+  host: 127.0.0.1
+  port: 4723
+  systemPort: 8201
+  bundleId: "cn.btclass.sierra"
+  xcodeOrgId: 3T49A8WRJ5

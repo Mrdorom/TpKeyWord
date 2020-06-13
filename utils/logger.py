@@ -43,4 +43,3 @@ class MyLogger(object):
 if __name__ == '__main__':
     logger = MyLogger("logger").getlogger()
     logger.info("ccc")
-

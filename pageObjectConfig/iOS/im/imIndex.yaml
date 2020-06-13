@@ -1,4 +1,12 @@
 reconnect: type=='XCUIElementTypeStaticText' AND name=='连接中，或点击重新连接'
-search_button: type=='XCUIElementTypeTextField' AND value=='搜索'
-search_response: xpath,//XCUIElementTypeTable/XCUIElementTypeCell   # 搜索结果
-adder_button: type=='XCUIElementTypeButton' AND label=='address'  # 通讯录
+searchButton: type=='XCUIElementTypeButton' AND value=='搜索'
+searchFild: type=='XCUIElementTypeTextField' AND value=='搜索'
+QuestionResonse: type=='XCUIElementTypeStaticText' and name=='题目'
+DoubtResonse: type=='XCUIElementTypeStaticText' and name=='问答'
+classGroupResonse: type=='XCUIElementTypeStaticText' and name=='班级'
+#  题库搜索、问答搜索、班级搜索 结果元素未完成
+
+addressButton: type=='XCUIElementTypeButton' AND label=='address'  # 通讯录
+systemNotice: type=='XCUIElementTypeButton' and name=='cam new icon day'   # 系统消息按钮
+doubtButton: type=='XCUIElementTypeStaticText' and name=='问答'
+classGroupButton: type=='XCUIElementTypeStaticText' and name=='班级'

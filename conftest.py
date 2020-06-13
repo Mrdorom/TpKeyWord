@@ -75,9 +75,27 @@ def iosTearDown(driver):
     driver.close_app()
 
 
+@pytest.fixture(scope='function')
+def classGroupSetUp(db):
+    """
+    班组添加好友前的数据处理
+    :param db:
+    :param userId:
+    :param fridentUserId:
+    :return:
+    """
+    sql = "delete from im_friend where userId={0} and `friendUserId`={1}".format(1000023,1000944)
+    db.operation(sql)
+    sql2 = "delete from im_friend where userId={0} and `friendUserId`={1}".format(1000944,1000944)
+    db.operation(sql2)
 
 
-
-
-
-
+@pytest.fixture(scope='function')
+def classGroupTeardown(db):
+    """
+    班组添加好友后的数据清理
+    :param db:
+    :return:
+    """
+    yield classGroupTeardown
+    classGroupSetUp(db)
